@@ -29,7 +29,7 @@
 
 // const express = require('express');
 
-// const app = express();
+// const app = express();   //*express is a function stored in app
 
 // let port = 8080;  //8080
 
