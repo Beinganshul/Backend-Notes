@@ -95,7 +95,7 @@
 
 //*JIS BHI FUNCTION YA JIS BHI KEYWORD KO EXPORT KARNA HAI OOSKE AAGE EXPORT
 
-//!EXPORT CONNST SUM (A,B) => A+B ;
+//!EXPORT CONST SUM (A,B) => A+B ;
 
 
 //*par iske liye package.json me "type" = "module"

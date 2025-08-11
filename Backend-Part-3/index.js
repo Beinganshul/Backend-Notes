@@ -74,3 +74,47 @@ app.get("/rolldice" , (req, res) => {
 })                              //*ek object pass karke kaam hora hai
                                 //*we can also make key and value similar
                                 //*{num: diceval} = {diceval}
+
+               
+
+                                
+//?INSTAGRAM ROUTE SYSTEM 
+
+
+// app.get("/ig/:username", (req,res) => {
+//     let {username} = req.params;        //*this stores the username from the url in the username object
+//     res.render("instagram.ejs", {username});
+// })
+
+
+
+
+
+app.get("/ig/:username", (req,res) => {
+    let {username} = req.params;
+    const instaData = require("./data.json");
+    const data = instaData[username];
+    console.log(data);
+    if(data){
+        res.render("instagram.ejs", {data});
+    }else{
+        res.render("error.ejs");
+    }
+})
+
+
+//?SENDING STATIC FILES
+
+//*AGAR CODE KE SAATH CSS AND JAVA SCRIPT JAISI FILES KO INCLUDE KARNA HAI TO OONHE KAISE KARENGE
+
+
+app.use(express.static(path.join(__dirname,"public/css")));   //*static files ko serve karne ke liye public naam ka folder hona chahiye just like views
+app.use(express.static(path.join(__dirname,"public/js")));   //*static files ko serve karne ke liye public naam ka folder hona chahiye just like views
+
+
+
+//?INCLUDES ARE USED TO CREATE SUBTEMPLATES
+
+//*jiss cheej ko bohot saare template ke  andar use kiya jaa sakta hai osse includes ke andar  use kar saakte hain
+
+
